@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='dblist,
+    name='dblist',
     version='0.0.1',
     description='Async wrapper for DBL api',
     long_description_content_type="text/markdown",
