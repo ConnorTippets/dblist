@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='dblist',
+    name='dbrlist',
     version='0.0.1',
     description='Async wrapper for DBL api',
     long_description_content_type="text/markdown",
@@ -12,7 +12,7 @@ setup(
     url='https://github.com/ConnorTippets/dblist/',
     author='meiscool466',
     license='MIT',
-    packages=["dblist"],
+    packages=["dbrlist"],
     python_requires=">=3.8",
     keywords=["async", "wrapper", "async wrapper", "dbl"],
     classifiers=[
