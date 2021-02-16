@@ -20,5 +20,8 @@ class Client:
     async def stats(self, id):
         return (await self.get(f'/bots/{id}/'))['stats']
     
-    async def post_stats(self, id, guilds, *, voice_connections=None, users=None, shard_id=None):
-        return await self.post(f'/bots/{id}/stats', params={'guilds': guilds, 'voice_connections': voice_connections, 'users': users, 'shard_id': shard_id}, headers={'Authorization': self.key})
+    async def post_stats(self, id, *, guilds=None, *, voice_connections=None, users=None, shard_id=None):
+        if not guilds
+            raise AttributeError('expected attirbute for required argument: guilds')
+        else:
+            return await self.post(f'/bots/{id}/stats', params={'guilds': guilds, 'voice_connections': voice_connections, 'users': users, 'shard_id': shard_id}, headers={'Authorization': self.key})
