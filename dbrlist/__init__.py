@@ -20,5 +20,5 @@ class Client:
     async def stats(self, id):
         return (await self.get(f'/bots/{id}/'))['stats']
     
-    async def post_stats(self, guilds, *, voice_connections=None, users=None, shard_id=None):
+    async def post_stats(self, id, guilds, *, voice_connections=None, users=None, shard_id=None):
         return await self.post(f'/bots/{id}/stats', params={'guilds': guilds, 'voice_connections': voice_connections, 'users': users, 'shard_id': shard_id}, headers={'Authorization': self.key})
