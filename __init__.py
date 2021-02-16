@@ -7,11 +7,11 @@ class Client:
         self.base_url = 'https://discordbotlist.com/api/v1'
     
     async def get(self, route, *, params={}, headers={}):
-        async with self.session.get(base_url + route, params=params, headers=headers) as resp:
+        async with self.session.get(self.base_url + route, params=params, headers=headers) as resp:
             return await resp.json()
     
     async def post(self, route, *, params={}, headers={}):
-        async with self.session.post(base_url + route, params=params, headers=headers) as resp:
+        async with self.session.post(self.base_url + route, params=params, headers=headers) as resp:
             return resp.status
     
     async def metrics(self, id):
